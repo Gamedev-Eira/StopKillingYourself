@@ -1,0 +1,43 @@
+.MoneyContentHolderBox {
+    display: block;
+    position: relative;
+
+    /*The width of this content box spans the screen. Overflow X also stops any horizontal scrolling*/
+    max-width: 100%;
+    overflow-x: hidden;
+
+    /*Centers text*/
+    text-align: center;
+
+    /*Sets padding*/
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /*Sets colour of the main portion of the box*/
+    background-color: #bfecea;
+}
+
+.MoneyContentHolderTitle{
+    display: block;
+    position: relative;
+
+    /*The width of this content box spans the screen.
+    Overflow X being hidden also stops horizontal scrolling*/
+    max-width: 100%;
+    overflow-x: hidden;
+
+    /*Centers text*/
+    text-align: center;
+
+    /*Sets padding*/
+    padding-left: 25px;
+    padding-right: 25px;
+
+    /*Sets the margin*/
+    margin-top: 25px;
+
+    /*Sets colour of the title portion of the box*/
+    background-color: #a3d3dc;
+}

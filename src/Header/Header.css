@@ -1,0 +1,47 @@
+.Header {
+
+    /*Makes the header a fixed inline-block that sits at the top left of the screen*/
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+
+    top: 0px;
+    left: 0vx;
+    z-index: +1;
+
+    /*The width of this header spans the screen, and it is 150 pixels tall*/
+    width: auto;
+    height: auto;
+
+    /*Sets the margin and border*/
+    border-radius: 0px;
+    margin: 0px;
+
+    /*Sets padding*/
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /*Sets colour*/
+    background-color: #6d9756;
+  }
+
+  .icon {
+
+    height: calc(10vw + 5vh);
+    width: calc(10vw + 5vh);
+    
+    margin-right: 5vw;
+
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text h1, .text h2, .text h3 {
+    margin: 0px;
+    line-height: 2;
+  }
