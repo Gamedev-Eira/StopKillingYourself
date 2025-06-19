@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Gamedev-Eira.github.io/static/css/main.4f45386b.css",
+    "main.js": "/Gamedev-Eira.github.io/static/js/main.473abf97.js",
+    "static/js/453.53d63501.chunk.js": "/Gamedev-Eira.github.io/static/js/453.53d63501.chunk.js",
+    "static/media/Default_Icon.png": "/Gamedev-Eira.github.io/static/media/Default_Icon.e8a99c977a72be485160.png",
+    "index.html": "/Gamedev-Eira.github.io/index.html",
+    "main.4f45386b.css.map": "/Gamedev-Eira.github.io/static/css/main.4f45386b.css.map",
+    "main.473abf97.js.map": "/Gamedev-Eira.github.io/static/js/main.473abf97.js.map",
+    "453.53d63501.chunk.js.map": "/Gamedev-Eira.github.io/static/js/453.53d63501.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f45386b.css",
+    "static/js/main.473abf97.js"
+  ]
+}
