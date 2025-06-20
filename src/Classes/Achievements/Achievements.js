@@ -76,9 +76,6 @@ class Achievement extends Component {
 
     var days = Math.floor(this.TimeDifference / (1000 * 60 * 60 * 24));
 
-    console.log(this.AchievementCondition)
-    console.log(days);
-
     if (this.AchievementCondition <= days) { return true }
     else {return false}
 

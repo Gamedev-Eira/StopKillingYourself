@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Cookies from 'js-cookie';
 
 import AppHeader from './Header/Header';
 import TimerHolder from './ContentHolders/TimerHolder/TimerHolder';
@@ -7,15 +8,14 @@ import AchievementHolder from './ContentHolders/AchievementHolder/AchievementHol
 
 export default function App() {
 
-  const [NameValue, SetNameValue] = useState(localStorage.getItem('NameValue') || "");
-  const [DateValue, SetDateValue] = useState(localStorage.getItem('DateValue') || "");
-  const [PriceValue, SetPriceValue] = useState(localStorage.getItem('PriceValue') || "");
-  const [UnitValue, SetUnitValue] = useState(localStorage.getItem('UnitValue') || "");
+  const [NameValue, SetNameValue] = useState("");
+  Cookies.set('Name', 'PeePeePooPoo');
 
-  useEffect(() => { localStorage.setItem('NameValue', NameValue); }, [NameValue]);
-  useEffect(() => { localStorage.setItem('DateValue', DateValue); }, [DateValue]);
-  useEffect(() => { localStorage.setItem('PriceValue', PriceValue); }, [PriceValue]);
-  useEffect(() => { localStorage.setItem('UnitValue', UnitValue); }, [UnitValue]);
+  //console.log(Cookies.set('Name', 'Name'));
+
+  const [DateValue, SetDateValue] = useState("");
+  const [PriceValue, SetPriceValue] = useState("");
+  const [UnitValue, SetUnitValue] = useState("");
 
   return (
 
@@ -23,10 +23,10 @@ export default function App() {
 
       <AppHeader
       
-      NameValue = { useState(localStorage.getItem('NameValue')|| "") } SetNameValue = {SetNameValue} 
-      DateValue =  { useState(localStorage.getItem('DateValue')|| "") } SetDateValue = {SetDateValue}
-      UnitsValue = { useState(localStorage.getItem('UnitValue')|| "") } SetUnitValue = {SetUnitValue}
-      PriceValue = { useState(localStorage.getItem('PriceValue')|| "") } SetPriceValue = {SetPriceValue}
+      NameValue = {NameValue} SetNameValue = {SetNameValue} 
+      DateValue = {DateValue} SetDateValue = {SetDateValue}
+      UnitsValue = {UnitValue} SetUnitValue = {SetUnitValue}
+      PriceValue = {PriceValue} SetPriceValue = {SetPriceValue}
 
       />
       

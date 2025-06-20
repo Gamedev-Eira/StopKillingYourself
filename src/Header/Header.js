@@ -1,16 +1,26 @@
 import React from 'react'
 import './Header.css'
 import Icon from '../Assets/Default_Icon.png'
+import Cookies from 'js-cookie'
 
 export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateValue, UnitValue, SetUnitValue, PriceValue, SetPriceValue}) {
 
-    const HandleNameChange = (event) => { SetNameValue(event.target.value); }
+    const HandleNameChange = (event) => { 
 
-    const HandleDateChange = (event) => { SetDateValue(event.target.value); }
+      Cookies.set('Name', 'PeePeePooPoo')
+      SetNameValue( Cookies.get('Name') ); }
 
-    const HandleUnitChange = (event) => { SetUnitValue(event.target.value);}
+    const HandleDateChange = (event) => { 
+      
+      SetDateValue(event.target.value); }
 
-    const HandlePriceChange = (event) => { SetPriceValue(event.target.value);}
+    const HandleUnitChange = (event) => { 
+      
+      SetUnitValue(event.target.value);}
+
+    const HandlePriceChange = (event) => { 
+
+      SetPriceValue(event.target.value);}
 
     return (
     <div className='Header'>
@@ -22,9 +32,11 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
         <label htmlFor="string-input">What's your name?: </label>
         <input type="text"
         id="string-input"
-        value={NameValue}
+
+        value={Cookies.get('Name')}
         onChange={HandleNameChange}
-        placeholder="Name"/>
+        
+        placeholder={Cookies.get('Name')}/>
 
         <label htmlFor="datetime">When did you quit? </label>
         <input type="datetime-local"
