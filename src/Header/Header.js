@@ -1,16 +1,29 @@
 import React from 'react'
 import './Header.css'
 import Icon from '../Assets/Default_Icon.png'
+import Cookies from 'js-cookie'
 
 export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateValue, UnitValue, SetUnitValue, PriceValue, SetPriceValue}) {
 
-    const HandleNameChange = (event) => { SetNameValue(event.target.value); }
+    const HandleNameChange = (event) => { 
 
-    const HandleDateChange = (event) => { SetDateValue(event.target.value); }
+      Cookies.set('Name', event.target.value)
+      SetNameValue( Cookies.get('Name') ); }
 
-    const HandleUnitChange = (event) => { SetUnitValue(event.target.value);}
+    const HandleDateChange = (event) => { 
+      
+      Cookies.set('Date', event.target.value)
+      SetDateValue(event.target.value); }
 
-    const HandlePriceChange = (event) => { SetPriceValue(event.target.value);}
+    const HandleUnitChange = (event) => { 
+      
+      Cookies.set('Unit', event.target.value)
+      SetUnitValue(event.target.value);}
+
+    const HandlePriceChange = (event) => { 
+
+      Cookies.set('Price', event.target.value)
+      SetPriceValue(event.target.value);}
 
     return (
     <div className='Header'>
@@ -22,27 +35,28 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
         <label htmlFor="string-input">What's your name?: </label>
         <input type="text"
         id="string-input"
-        value={NameValue}
+
+        value={Cookies.get('Name')}
         onChange={HandleNameChange}
         placeholder="Name"/>
 
         <label htmlFor="datetime">When did you quit? </label>
         <input type="datetime-local"
         id="datetime"
-        value={DateValue}
+        value={Cookies.get('Date')}
         onChange={HandleDateChange}/>
 
         <label htmlFor="float-input">Weekly units (ex: vapes, tobacco pouches): </label>
         <input type="text" 
         id="float-input"
-        value={UnitValue}
+        value={Cookies.get('Unit')}
         onChange={HandleUnitChange}
         placeholder="0.0"/>
 
         <label htmlFor="float-input">Cost per unit: </label>
         <input type="text" 
         id="float-input"
-        value={PriceValue}
+        value={Cookies.get('Price')}
         onChange={HandlePriceChange}
         placeholder="0.0"/>
 

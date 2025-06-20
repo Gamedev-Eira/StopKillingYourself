@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import Cookies from 'js-cookie';
 
 import AppHeader from './Header/Header';
 import TimerHolder from './ContentHolders/TimerHolder/TimerHolder';
@@ -26,9 +26,9 @@ export default function App() {
 
       />
       
-      <TimerHolder LastUse={DateValue}/>
-      <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
-      <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
+      <TimerHolder LastUse={Cookies.get('Date')}/>
+      <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
 
     </div>
 
