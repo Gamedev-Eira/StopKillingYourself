@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useState, useEffect } from "react";
 
 import AppHeader from './Header/Header';
 import TimerHolder from './ContentHolders/TimerHolder/TimerHolder';
@@ -8,10 +7,15 @@ import AchievementHolder from './ContentHolders/AchievementHolder/AchievementHol
 
 export default function App() {
 
-  const [NameValue, SetNameValue] = useState("");
-  const [DateValue, SetDateValue] = useState("");
-  const [PriceValue, SetPriceValue] = useState("");
-  const [UnitValue, SetUnitValue] = useState("");
+  const [NameValue, SetNameValue] = useState(localStorage.getItem('NameValue') || "");
+  const [DateValue, SetDateValue] = useState(localStorage.getItem('DateValue') || "");
+  const [PriceValue, SetPriceValue] = useState(localStorage.getItem('PriceValue') || "");
+  const [UnitValue, SetUnitValue] = useState(localStorage.getItem('UnitValue') || "");
+
+  useEffect(() => { localStorage.setItem('NameValue', NameValue); }, [NameValue]);
+  useEffect(() => { localStorage.setItem('DateValue', DateValue); }, [DateValue]);
+  useEffect(() => { localStorage.setItem('PriceValue', PriceValue); }, [PriceValue]);
+  useEffect(() => { localStorage.setItem('UnitValue', UnitValue); }, [UnitValue]);
 
   return (
 
