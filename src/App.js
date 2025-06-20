@@ -23,10 +23,10 @@ export default function App() {
 
       <AppHeader
       
-      NameValue = {NameValue} SetNameValue = {SetNameValue} 
-      DateValue = {DateValue} SetDateValue = {SetDateValue}
-      UnitsValue = {UnitValue} SetUnitValue = {SetUnitValue}
-      PriceValue = {PriceValue} SetPriceValue = {SetPriceValue}
+      NameValue = { useState(localStorage.getItem('NameValue')|| "") } SetNameValue = {SetNameValue} 
+      DateValue =  { useState(localStorage.getItem('DateValue')|| "") } SetDateValue = {SetDateValue}
+      UnitsValue = { useState(localStorage.getItem('UnitValue')|| "") } SetUnitValue = {SetUnitValue}
+      PriceValue = { useState(localStorage.getItem('PriceValue')|| "") } SetPriceValue = {SetPriceValue}
 
       />
       
