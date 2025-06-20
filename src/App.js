@@ -9,10 +9,6 @@ import AchievementHolder from './ContentHolders/AchievementHolder/AchievementHol
 export default function App() {
 
   const [NameValue, SetNameValue] = useState("");
-  Cookies.set('Name', 'PeePeePooPoo');
-
-  //console.log(Cookies.set('Name', 'Name'));
-
   const [DateValue, SetDateValue] = useState("");
   const [PriceValue, SetPriceValue] = useState("");
   const [UnitValue, SetUnitValue] = useState("");
@@ -30,9 +26,9 @@ export default function App() {
 
       />
       
-      <TimerHolder LastUse={DateValue}/>
-      <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
-      <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
+      <TimerHolder LastUse={Cookies.get('Date')}/>
+      <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
 
     </div>
 

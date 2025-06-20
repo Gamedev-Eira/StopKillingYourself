@@ -7,19 +7,22 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
 
     const HandleNameChange = (event) => { 
 
-      Cookies.set('Name', 'PeePeePooPoo')
+      Cookies.set('Name', event.target.value)
       SetNameValue( Cookies.get('Name') ); }
 
     const HandleDateChange = (event) => { 
       
+      Cookies.set('Date', event.target.value)
       SetDateValue(event.target.value); }
 
     const HandleUnitChange = (event) => { 
       
+      Cookies.set('Unit', event.target.value)
       SetUnitValue(event.target.value);}
 
     const HandlePriceChange = (event) => { 
 
+      Cookies.set('Price', event.target.value)
       SetPriceValue(event.target.value);}
 
     return (
@@ -35,26 +38,25 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
 
         value={Cookies.get('Name')}
         onChange={HandleNameChange}
-        
-        placeholder={Cookies.get('Name')}/>
+        placeholder="Name"/>
 
         <label htmlFor="datetime">When did you quit? </label>
         <input type="datetime-local"
         id="datetime"
-        value={DateValue}
+        value={Cookies.get('Date')}
         onChange={HandleDateChange}/>
 
         <label htmlFor="float-input">Weekly units (ex: vapes, tobacco pouches): </label>
         <input type="text" 
         id="float-input"
-        value={UnitValue}
+        value={Cookies.get('Unit')}
         onChange={HandleUnitChange}
         placeholder="0.0"/>
 
         <label htmlFor="float-input">Cost per unit: </label>
         <input type="text" 
         id="float-input"
-        value={PriceValue}
+        value={Cookies.get('Price')}
         onChange={HandlePriceChange}
         placeholder="0.0"/>
 
