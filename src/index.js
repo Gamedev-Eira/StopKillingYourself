@@ -1,3 +1,5 @@
+//Auto generated code just to get the app to work
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

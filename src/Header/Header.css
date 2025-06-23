@@ -1,12 +1,14 @@
-.Header {
+.Header { /*Header class gives the qualities of the box that other header elements sit in*/
 
+    /*Creates a flexbox, with elements in it starting in the top left*/
     display: flex;
     align-items: flex-start;
-    overflow-x: hidden;
+    overflow-x: hidden; /*overflow x being hidden prevents horizontal scrolling*/
 
+    /*Positions the header to sit on the top-left corner of the app*/
     top: 0px;
     left: 0vx;
-    z-index: +1;
+    z-index: +1; /*Z-index being plus one makes it draw above other elements*/
 
     width: auto;
     height: auto;
@@ -22,20 +24,26 @@
     background-color: #6d9756;
   }
 
-  .icon {
+  .icon {  /*Icon class is used to decide how to render the app icon*/
 
+     /*Height and width of the icon are equal to 10% of the width of the screen, and 5% of the height.*/
+     /*This makes the icon scale in size along with the screen - exact values were chosen by what looked best*/
     height: calc(10vw + 5vh);
     width: calc(10vw + 5vh);
     
+    /*Intorudces a margin that's 5% of the height of the screen between the icon and anything on it's right side*/
+    /*As the icon will have text to the right of it, this is to reduce clutter*/
     margin-right: 5vw;
 
   }
 
+  /*Sets qualities of the text in the header - specifically makes it display upwards to downwards*/
   .text {
     display: flex;
     flex-direction: column;
   }
 
+  /*Code appears not to be needed, but I'm not deleting this to test that*/
   .text h1, .text h2, .text h3 {
     margin: 0px;
     line-height: 2;

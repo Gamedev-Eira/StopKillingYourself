@@ -1,9 +1,10 @@
-import React from 'react'
 import './AchievementHolder.css'
 import Achievement from '../../Classes/Achievements/Achievements';
 
+//AchievementHolder is responsible both for being the container that holds the achievements, and is where the achievments are created
 export default function AchievementHolder(props) {
 
+    //List of achievements being initialised
     var StartingAchievement = new Achievement(
         {Title : "Download the app",
         Tagline : "You started your quitting journey!",
@@ -58,20 +59,24 @@ export default function AchievementHolder(props) {
         Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
     )
 
+    //return HTML elements
     return (
         
-        <div>
+        <div> {/*Everything wrapped in a div*/}
             
+            {/*Content holder split into two boxes - one that holds the title and sub-title, and one that holds everything else*/}
+            {/*This one holds the title*/}
             <div className='AchievementContentHolderTitle'>
                 
                 <h1>Achievements:</h1>  
                 <h3>Track your progress:</h3>
                 
             </div>
-
+            
+            {/*This div holds the achievement text itself*/}
             <div className='AchievementContentHolderBox'> <ul class="List">
 
-                <h3>
+                <h3> {/*Achievements are displayed as h3s - displayed by calling ReturnTitle and ReturnTagline for each achievement*/}
                 <li><b>{StartingAchievement.ReturnTitle()}</b> | {StartingAchievement.ReturnTagline()}</li>
                 <li><b>{FirstDayAchievement.ReturnTitle()}</b> | {FirstDayAchievement.ReturnTagline()}</li>
                 <li><b>{CoffeeAchievement.ReturnTitle()}</b> | {CoffeeAchievement.ReturnTagline()}</li>
