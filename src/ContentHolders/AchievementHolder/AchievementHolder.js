@@ -66,8 +66,11 @@ export default function AchievementHolder(props) {
                 
                 <h1>Achievements:</h1>  
                 <h3>Track your progress:</h3>
+                
             </div>
-            <div className='AchievementContentHolderBox'> <ul class="UnachievedList">
+
+            <div className='AchievementContentHolderBox'> <ul class="List">
+
                 <h3>
                 <li><b>{StartingAchievement.ReturnTitle()}</b> | {StartingAchievement.ReturnTagline()}</li>
                 <li><b>{FirstDayAchievement.ReturnTitle()}</b> | {FirstDayAchievement.ReturnTagline()}</li>
@@ -76,7 +79,10 @@ export default function AchievementHolder(props) {
                 <li><b>{AverageSpendAchievement.ReturnTitle()}</b> | {AverageSpendAchievement.ReturnTagline()}</li>
                 <li><b>{SecondWeekAchievement.ReturnTitle()}</b> | {SecondWeekAchievement.ReturnTagline()}</li>
                 </h3>
-                </ul> </div>
+                </ul>
+
+            </div>
+
         </div>
         
     );

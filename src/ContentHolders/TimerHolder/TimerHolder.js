@@ -1,4 +1,3 @@
-import React from 'react'
 import './TimerHolder.css'
 import '../../Classes/Timer/Timer'
 import TobaccoTimer from '../../Classes/Timer/Timer';
@@ -6,7 +5,6 @@ import TobaccoTimer from '../../Classes/Timer/Timer';
 export default function TimerHolder(props) {
     
     const DateVal = props.LastUse;
-    //if(!props.LastUse){  }
 
     return (
         

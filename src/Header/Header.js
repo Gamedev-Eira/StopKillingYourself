@@ -1,9 +1,8 @@
-import React from 'react'
 import './Header.css'
 import Icon from '../Assets/Default_Icon.png'
 import Cookies from 'js-cookie'
 
-export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateValue, UnitValue, SetUnitValue, PriceValue, SetPriceValue}) {
+export default function AppHeader({SetNameValue, SetDateValue, SetUnitValue, SetPriceValue}) {
 
     const HandleNameChange = (event) => { 
 
@@ -26,6 +25,7 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
       SetPriceValue(event.target.value);}
 
     return (
+      
     <div className='Header'>
 
       <img className="icon" src={Icon} alt="Icon"/>
@@ -60,9 +60,9 @@ export default function AppHeader({NameValue, SetNameValue, DateValue, SetDateVa
         onChange={HandlePriceChange}
         placeholder="0.0"/>
 
-
       </div>
 
     </div>
-    );
-  }
+
+  );
+}

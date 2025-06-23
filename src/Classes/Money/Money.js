@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-//timer is a class, uses reacts Component class as a parent
 class MoneyTracker extends Component {
   
-  //constructor of MoneyTracker
   constructor(props) {
 
-    //Calls the constructor of the parent Component class
     super(props);
 
     this.state = { MoneySaved: this.CalculateMoneySaved() };
+
   }
 
   componentDidMount() {
@@ -18,14 +16,11 @@ class MoneyTracker extends Component {
 
       this.setState({MoneySaved : this.CalculateMoneySaved() } );
 
-    }, 300); // Sets update time - unsure exactly how long this is, but felt like a good responsive time frame
+    }, 300);
 
   }
 
-  //Function called in constructor, and then every 30 seconds to cause an update to the timer
   CalculateMoneySaved() {
-
-    
 
     if(!this.props.CostPerDay || !this.props.DateOfLastUse) {
       return 0.00;
@@ -43,15 +38,16 @@ class MoneyTracker extends Component {
       return TotalSaved.toFixed(2);
 
     }    
-    
   }
 
   render() {
 
     return (
+      
       <div>
         <p>£{this.state.MoneySaved}</p>
       </div>
+
     );
   }
 }

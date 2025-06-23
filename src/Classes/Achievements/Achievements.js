@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 
-//timer is a class, uses reacts Component class as a parent
 class Achievement extends Component {
   
-  //constructor of TobaccoTimer
   constructor(props) {
 
-    //Calls the constructor of the parent Component class
     super(props);
 
-    //String is the default message you get for an achievment if you haven't completed it yet
-    
     if(props.DefaultMessage === "Default") { this.DefaultMessage = "Keep going, you can do it!" }
     else ( this.DefaultMessage = props.DefaultMessage )
 
@@ -80,7 +75,6 @@ class Achievement extends Component {
     else {return false}
 
   }
-
 }
 
 export default Achievement;
