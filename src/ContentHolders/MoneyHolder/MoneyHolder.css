@@ -1,20 +1,23 @@
+/*MoneyContentHolderBox sets the base for the box that holds the money counter*/
 .MoneyContentHolderBox {
-    display: block;
+    display: block;     /*Displays as a box that scrolls with the screen*/
     position: relative;
 
-    max-width: 100%;
-    overflow-x: hidden;
+    max-width: 100%;    /*Box width matches the width of the screen*/
+    overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
 
-    text-align: center;
+    text-align: center; /*Aligns box contents to the centre*/
 
-    padding-left: 25px;
+    padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
     padding-right: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
 
-    background-color: #bfecea;
+    background-color: #bfecea;  /*Sets colour of the box*/
 }
 
+/*MoneyContentHolderTitle is also a box, but is a different colour and holds the title of that section of the app*/
+/*This box will sit directly on top of the HolderBox*/
 .MoneyContentHolderTitle{
     display: block;
     position: relative;
@@ -27,7 +30,8 @@
     padding-left: 25px;
     padding-right: 25px;
 
-    margin-top: 25px;
+    margin-top: 25px;   /*margin-top sets the gap between this titles top-edge and anything above it.*/
+                        /*there's no margin-bottom as the content box needs to sit directly below it*/
 
     background-color: #a3d3dc;
 }

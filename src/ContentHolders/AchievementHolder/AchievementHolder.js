@@ -84,7 +84,7 @@ export default function AchievementHolder(props) {
                 <li><b>{AverageSpendAchievement.ReturnTitle()}</b> | {AverageSpendAchievement.ReturnTagline()}</li>
                 <li><b>{SecondWeekAchievement.ReturnTitle()}</b> | {SecondWeekAchievement.ReturnTagline()}</li>
                 </h3>
-                </ul>
+                </ul> {/*Achievements also are stored in an unordered list because I thought it looked better*/}
 
             </div>
 

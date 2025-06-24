@@ -1,11 +1,12 @@
 import './MoneyHolder.css'
 import MoneyTracker from '../../Classes/Money/Money'
 
+//Default MoneyHolder function - recieves it's arguments via props
 export default function MoneyHolder(props) {
-
+    
     return (
         
-        <div>
+        <div> 
             
             <div className='MoneyContentHolderTitle'>
                 
