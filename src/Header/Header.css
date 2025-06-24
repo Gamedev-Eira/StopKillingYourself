@@ -42,9 +42,3 @@
     display: flex;
     flex-direction: column;
   }
-
-  /*Code appears not to be needed, but I'm not deleting this to test that*/
-  .text h1, .text h2, .text h3 {
-    margin: 0px;
-    line-height: 2;
-  }

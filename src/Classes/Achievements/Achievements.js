@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 //Achievement class acts as a template for an achievment, which can then be created and managed elsewhere
 //Created as a child of the component class
@@ -49,10 +49,10 @@ class Achievement extends Component {
         //If statements first check if this achievement hasn't been achieved.
         //If they haven't, the achievement condition is calculated in the same way as in the constructor
 
-        if(this.state.Achieved == false && this.AchievementType === "Money") {
+        if(this.state.Achieved === false && this.AchievementType === "Money") {
             this.setState({Achieved : this.CalculateMoneyCondition() } );
             
-        } if(this.state.Achieved == false && this.AchievementType === "Timer") {
+        } if(this.state.Achieved === false && this.AchievementType === "Timer") {
             this.setState({Achieved : this.CalculateTimerCondtion() } );
         }
 

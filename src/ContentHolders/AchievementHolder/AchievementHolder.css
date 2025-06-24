@@ -36,14 +36,6 @@
     background-color: #8ab2d7;
 }
 
-/*This class ended up going unused, forgot to remove before compilation*/
-.AchievementTable{
-
-    border: 1px solid;
-    width: 80%;
-
-}
-
 /*Achievements are stored in an unordered list - this makes the bullet-point next to them a circle*/
 .List {
     list-style-type: circle;

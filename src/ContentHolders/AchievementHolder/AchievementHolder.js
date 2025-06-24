@@ -6,7 +6,7 @@ export default function AchievementHolder(props) {
 
     //List of achievements being initialised
     var StartingAchievement = new Achievement(
-        {Title : "Download the app",
+        {Title : "Use this app for the first time",
         Tagline : "You started your quitting journey!",
         DefaultMessage : "Default",
         AchievementCondition : 0,
