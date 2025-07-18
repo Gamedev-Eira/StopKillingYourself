@@ -14,7 +14,7 @@ export default function App() {
 
   return ( 
 
-    <div> {
+    <div>
       
       <AppHeader SetNameValue = {SetNameValue} SetDateValue = {SetDateValue} SetUnitValue = {SetUnitValue} SetPriceValue = {SetPriceValue}/>
       
