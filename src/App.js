@@ -1,7 +1,6 @@
 //Main app file - calls all other components and holds key values
 
 import React, { useState } from "react"; //Uses React States - states are used for components that need to be re-rendered, as state updates trigger re-renders
-import Cookies from 'js-cookie'; //Uses JS-Cookie to use cookies - cookies are used to save some of the values entered by the user
 
 //Imports the 4 "container" compondents - these are self-contained elements of the app that displays (or gathers) certain information
 import AppHeader from './Header/Header';
@@ -22,23 +21,16 @@ export default function App() {
 
     <div> {/*Everything wrapped in a div - probably not needed but felt correct*/}
 
-      {/*Calls the header for the app, and passes the state values and their functions to it, so they can be used within the header*/}
-      <AppHeader  
-      
-      NameValue = {NameValue} SetNameValue = {SetNameValue} 
-      DateValue = {DateValue} SetDateValue = {SetDateValue}
-      UnitsValue = {UnitValue} SetUnitValue = {SetUnitValue}
-      PriceValue = {PriceValue} SetPriceValue = {SetPriceValue}
-
-      />
+      {/*Calls the header for the app, and passes the state functions to it, so they can be used within the header*/}
+      <AppHeader SetNameValue = {SetNameValue} SetDateValue = {SetDateValue} SetUnitValue = {SetUnitValue} SetPriceValue = {SetPriceValue}/>
       
       {/*Other app elements are called here*/}
-      {/*They recieve the values of the data stored in cookies, and then use those as props rather than accessing the cookies themselves*/}
+      {/*They recieve the values of the data stored in the state, and then use those as props rather than accessing the state or cookies themselves*/}
       {/*This was done for data integrity, but also so the functions could preform their own data validation on the data they recieve a bit easier*/}
       {/*This is also a hold-over from before cookies were implemented - didn't want to re-implement input validation*/}
-      <TimerHolder LastUse={Cookies.get('Date')}/>
-      <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
-      <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <TimerHolder LastUse={DateValue}/>
+      <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
+      <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
 
     </div> //end div wrapper
 
