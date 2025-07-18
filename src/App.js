@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Cookies from 'js-cookie';
 
 import AppHeader from './Header/Header';
 import TimerHolder from './ContentHolders/TimerHolder/TimerHolder';
@@ -13,24 +12,18 @@ export default function App() {
   const [PriceValue, SetPriceValue] = useState("");
   const [UnitValue, SetUnitValue] = useState("");
 
-  return (
+  return ( 
 
-    <div>
-
-      <AppHeader
+    <div> {
       
-      NameValue = {NameValue} SetNameValue = {SetNameValue} 
-      DateValue = {DateValue} SetDateValue = {SetDateValue}
-      UnitsValue = {UnitValue} SetUnitValue = {SetUnitValue}
-      PriceValue = {PriceValue} SetPriceValue = {SetPriceValue}
-
-      />
+      <AppHeader SetNameValue = {SetNameValue} SetDateValue = {SetDateValue} SetUnitValue = {SetUnitValue} SetPriceValue = {SetPriceValue}/>
       
-      <TimerHolder LastUse={Cookies.get('Date')}/>
-      <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
-      <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <TimerHolder LastUse={DateValue}/>
+      <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
+      <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
 
     </div>
 
   );
+  
 }
