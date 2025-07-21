@@ -31,7 +31,7 @@ class MoneyTracker extends Component {
       var TimeNow = new Date()
 
       var MoneySavedPerMillisecond = this.props.CostPerDay / 86400000
-      var MilesecondsSinceLastUse = TimeNow.getTime() - this.props.DateOfLastUse.getTime()
+      var MilesecondsSinceLastUse = TimeNow - this.props.DateOfLastUse
 
       var TotalSaved = MoneySavedPerMillisecond * MilesecondsSinceLastUse
 
