@@ -56,7 +56,7 @@ class Achievement extends Component {
             this.setState({Achieved : this.CalculateTimerCondtion() } );
         }
 
-    }, 300); //Sets the frequency of how often this function runs - unsure the exact time, but felt appropriately responsive during testing.
+    }, 300); //Sets the frequency of how often this function runs to once every 300 milliseconds
 
   }
 
