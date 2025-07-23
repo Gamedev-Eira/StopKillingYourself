@@ -27,9 +27,9 @@ class MoneyTracker extends Component {
   //Function calculates how much money the user has saved
   CalculateMoneySaved() {
 
-    //First checks the props it recieved - if CostPerDay is NULL or NAN (not a number), or the date is empty, the default value of 0.00 is returned
+    //First checks the props it recieved - if CostPerDay is NULL or NAN (not a number), or the date is NAN, the default value of 0.00 is returned
     //This code runs first to catch any invalid data before other calculations are done
-    if(!this.props.CostPerDay || !this.props.DateOfLastUse) {
+    if(!this.props.CostPerDay || isNaN(this.props.DateOfLastUse)) {
       return 0.00;
     }
 
