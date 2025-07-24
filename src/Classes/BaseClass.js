@@ -25,7 +25,6 @@ class BaseClass extends Component {
 
         if(!this.props.TimeOfLastUse) {
             var LastUseTimeObject = CurrentTime;
-            console.log("Uh oh, stinky");
         } else {
             var LastUseTimeObject = new Date(this.props.TimeOfLastUse);
         }
