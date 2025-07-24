@@ -44,7 +44,7 @@ class Scoreboard extends BaseClass {
     //Displays the time in days, hours, and minutes
     DisplayTime() {
         const { days, hours, minutes } = super.CalculateDaysHoursMinutes(this.props.TimeOfLastUse);
-        var ConjounedString = days + " Day(s), " + hours + " Hour(s) ," + minutes + " Minute(s)";
+        var ConjounedString = days + " Day(s), " + hours + " Hour(s), " + minutes + " Minute(s)";
 
         return ( ConjounedString );
     }
