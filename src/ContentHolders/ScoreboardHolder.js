@@ -13,6 +13,18 @@ export default function ScoreboardHolder(props) {
         TimeOfLastUse : props.LastUse}
     )
 
+    var DannyScoreboardEntry = new Scoreboard(
+        {Name : "Danny",
+        CostPerDay : 0.23,
+        TimeOfLastUse : "2025-07-24T08:13:42"}
+    )
+
+    var AmyScoreboardEntry = new Scoreboard(
+        {Name : "Amy",
+        CostPerDay : 0.18,
+        TimeOfLastUse : "2025-07-13T19:47:28"}
+    )
+
     //return HTML elements
     return (
         
@@ -30,7 +42,11 @@ export default function ScoreboardHolder(props) {
             {/*This div holds the scoreboard text itself*/}
             <div className='ScoreboardContentHolderBox'>
 
-                {UserScoreboardEntry.DisplayName()} | {UserScoreboardEntry.DisplayTime()} | {UserScoreboardEntry.DisplayMoney()}
+                <h3>{UserScoreboardEntry.DisplayName()} | {UserScoreboardEntry.DisplayTime()} | {UserScoreboardEntry.DisplayMoney()}</h3>
+
+                <h3>{DannyScoreboardEntry.DisplayName()} | {DannyScoreboardEntry.DisplayTime()} | {DannyScoreboardEntry.DisplayMoney()}</h3>
+
+                <h3>{AmyScoreboardEntry.DisplayName()} | {AmyScoreboardEntry.DisplayTime()} | {AmyScoreboardEntry.DisplayMoney()}</h3>
 
             </div>
 
