@@ -26,14 +26,13 @@ export default function App() {
       <AppHeader SetNameValue = {SetNameValue} SetDateValue = {SetDateValue} SetUnitValue = {SetUnitValue} SetPriceValue = {SetPriceValue}/>
       
       {/*Other app elements are called here*/}
-      {/*They recieve the values of the data stored in the state, and then use those as props rather than accessing the state or cookies themselves*/}
-      {/*This was done for data integrity, but also so the functions could preform their own data validation on the data they recieve a bit easier*/}
+      {/*They recieve the values saved in the cookies, as trying to have them access the state caused issues with data not updating correctly between site reloads*/}
       {/*This is also a hold-over from before cookies were implemented - didn't want to re-implement input validation*/}
     
-      <TimerHolder LastUse={DateValue}/>
-      <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
-      <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
-      <ScoreboardHolder UserName = {NameValue} CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue} />
+      <TimerHolder LastUse={Cookies.get('Date')}/>
+      <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
+      <ScoreboardHolder UserName = {Cookies.get('Name')} CostPerUnit={PriceValue} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')} />
 
     </div> //end div wrapper
 
