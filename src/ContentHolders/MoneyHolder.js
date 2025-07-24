@@ -18,7 +18,10 @@ export default function MoneyHolder(props) {
             <div className='MoneyContentHolderBox'>
                 
                 <h2>
-                    <MoneyTracker CostPerDay = {(props.UnitsPerWeek * props.CostPerUnit) / 7} DateOfLastUse = {new Date(props.LastUse)}/> 
+
+                    <MoneyTracker
+                    CostPerDay = {(props.UnitsPerWeek * props.CostPerUnit) / 7}
+                    TimeOfLastUse = {props.LastUse}/> 
                 </h2>
             
             </div>
