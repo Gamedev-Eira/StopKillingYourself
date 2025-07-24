@@ -1,4 +1,4 @@
-import './TimerHolder.css'
+import '../../App.css' //Imports CSS
 import '../../Classes/Timer/Timer'
 import TobaccoTimer from '../../Classes/Timer/Timer';
 

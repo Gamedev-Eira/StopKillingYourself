@@ -1,4 +1,5 @@
-import './Header.css' //Imports it's CSS
+import '../App.css' //Imports CSS
+
 import Icon from '../Assets/Default_Icon.png' //Uses the apps logo, so imports it from the Assets folder
 import Cookies from 'js-cookie' //Reads and writes the value of the apps cookies, so imports the library
 

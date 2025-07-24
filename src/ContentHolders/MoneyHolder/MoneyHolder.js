@@ -1,4 +1,4 @@
-import './MoneyHolder.css'
+import '../../App.css' //Imports CSS
 import MoneyTracker from '../../Classes/Money/Money'
 
 //Default MoneyHolder function - recieves it's arguments via props
