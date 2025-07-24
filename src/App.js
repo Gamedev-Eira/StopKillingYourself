@@ -32,7 +32,7 @@ export default function App() {
       <TimerHolder LastUse={Cookies.get('Date')}/>
       <MoneyHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
       <AchievementHolder CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')}/>
-      <ScoreboardHolder UserName = {Cookies.get('Name')} CostPerUnit={PriceValue} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')} />
+      <ScoreboardHolder UserName = {Cookies.get('Name')} CostPerUnit={Cookies.get('Price')} UnitsPerWeek={Cookies.get('Unit')} LastUse={Cookies.get('Date')} />
 
     </div> //end div wrapper
 
