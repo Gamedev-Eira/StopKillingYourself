@@ -1,8 +1,17 @@
 import '../App.css' //Imports CSS
-import '../Classes/Scoreboard'
+import Scoreboard from '../Classes/Scoreboard'
 
 export default function ScoreboardHolder(props) {
 
+    //Works out the daily cost of the users nicotine usage to pass to the Scoreboard Classes due to be created
+    var DailyCost = ((props.CostPerUnit * props.UnitsPerWeek) / 7);
+
+    //Creates a new Scoreboard class instance
+    var UserScoreboardEntry = new Scoreboard(
+        {Name : props.UserName,
+        CostPerDay : DailyCost,
+        TimeOfLastUse : props.LastUse}
+    )
 
     //return HTML elements
     return (
@@ -18,10 +27,10 @@ export default function ScoreboardHolder(props) {
                 
             </div>
             
-            {/*This div holds the achievement text itself*/}
+            {/*This div holds the scoreboard text itself*/}
             <div className='ScoreboardContentHolderBox'>
 
-                PeePeePooPoo
+                {UserScoreboardEntry.DisplayName()} | {UserScoreboardEntry.DisplayTime()} | {UserScoreboardEntry.DisplayMoney()}
 
             </div>
 

@@ -33,7 +33,7 @@ export default function App() {
       <TimerHolder LastUse={DateValue}/>
       <MoneyHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
       <AchievementHolder CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue}/>
-      <ScoreboardHolder/>
+      <ScoreboardHolder UserName = {NameValue} CostPerUnit={PriceValue} UnitsPerWeek={UnitValue} LastUse={DateValue} />
 
     </div> //end div wrapper
 

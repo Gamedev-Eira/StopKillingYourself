@@ -66,6 +66,30 @@ class BaseClass extends Component {
         }    
     }
 
+    //Returns the time difference between the current date and the date the user last consumed nicoteine
+    //in days, hours, and minutes 
+    CalculateDaysHoursMinutes(){
+
+        var MillesecondsSinceLastUse = this.CalculateTimeSince(this.props.TimeOfLastUse);
+
+        if (!MillesecondsSinceLastUse || isNaN(MillesecondsSinceLastUse)) {
+            var days = 0;
+            var hours = 0;
+            var minutes = 0;
+        }
+
+        else {
+            //Runs maths to convert the milliseconds between the two times to days, hours, and minutes
+            var days = Math.floor(MillesecondsSinceLastUse / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((MillesecondsSinceLastUse % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((MillesecondsSinceLastUse % (1000 * 60 * 60)) / (1000 * 60));
+        }
+
+        //These values are then returned
+        return { days, hours, minutes };
+
+  }
+
 }
 
 export default BaseClass;
