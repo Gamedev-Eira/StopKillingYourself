@@ -1,5 +1,5 @@
-import './MoneyHolder.css'
-import MoneyTracker from '../../Classes/Money/Money'
+import '../App.css' //Imports CSS
+import MoneyTracker from '../Classes/Money'
 
 //Default MoneyHolder function - recieves it's arguments via props
 export default function MoneyHolder(props) {
@@ -18,7 +18,10 @@ export default function MoneyHolder(props) {
             <div className='MoneyContentHolderBox'>
                 
                 <h2>
-                    <MoneyTracker CostPerDay = {(props.UnitsPerWeek * props.CostPerUnit) / 7} DateOfLastUse = {new Date(props.LastUse)}/> 
+
+                    <MoneyTracker
+                    CostPerDay = {(props.UnitsPerWeek * props.CostPerUnit) / 7}
+                    TimeOfLastUse = {props.LastUse}/> 
                 </h2>
             
             </div>

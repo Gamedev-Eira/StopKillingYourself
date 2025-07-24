@@ -1,10 +1,11 @@
 import { Component } from 'react';
+import BaseClass from './BaseClass';
 
 //Achievement class acts as a template for an achievment, which can then be created and managed elsewhere
 //Created as a child of the component class
-class Achievement extends Component {
+class Achievement extends BaseClass {
   
-  //This is the constructor for the Achievment, which immedietly calls the contructor for Component
+  //This is the constructor for the Achievment, which immedietly calls the contructor for BaseClass
   //Props contains the arguments passed to the class
   constructor(props) { super(props);
 
@@ -22,11 +23,6 @@ class Achievement extends Component {
     this.AchievementCondition = props.AchievementCondition
     //Achievement type is a string representing what type of achievement it is - more detail bellow
     this.AchievementType = props.AchievementType
-
-    //Recieves the current Units cost, Units amount, and LastUse date to run maths
-    this.CostPerUnit = props.Cost
-    this.UnitsPerWeek = props.Units
-    this.LastUse = props.Last
 
     //These determine what function to run to decide if the achievement condition has been met
 
@@ -73,14 +69,8 @@ class Achievement extends Component {
   //Calculates the money condition
   CalculateMoneyCondition() {
 
-    //Uses the daily cost, usage stats, and amount of time since the last use to calculate how much money has been saved
-    var CostPerDay = ((this.UnitsPerWeek * this.CostPerUnit)/7)
-    var MoneySavedPerMillisecond = CostPerDay / 86400000
-    var TimeNow = new Date()
-    var DateOfLastUse = new Date(this.LastUse)
-    var MilesecondsSinceLastUse = TimeNow.getTime() - DateOfLastUse.getTime()
-
-    var TotalSaved = (MoneySavedPerMillisecond * MilesecondsSinceLastUse).toFixed(2);
+    //Total money saved is found by calling CalculateMoneySaved
+    var TotalSaved = super.CalculateMoneySaved(this.props.TimeOfLastUse, this.props.CostPerDay);
 
     //The amount of money saved is then compared - if it's equal or greater than the amount needed, the function returns true
     if (TotalSaved >= this.AchievementCondition) { return true }
@@ -91,10 +81,11 @@ class Achievement extends Component {
   //Calculate timer condition
   CalculateTimerCondtion() {
 
-    //Function calculates how many days it's been since the last usage
-    this.LastUseTimeObject = new Date(this.LastUse)
-    this.TimeDifference = new Date() - this.LastUseTimeObject;
-    var days = Math.floor(this.TimeDifference / (1000 * 60 * 60 * 24));
+    //Function calculates how many mileseconds since the last use by calling CalculateTimeSince
+    var TimeDifference = super.CalculateTimeSince(this.props.TimeOfLastUse)
+
+    //This value is then converted to days
+    var days = Math.floor(TimeDifference / (1000 * 60 * 60 * 24));
 
     //Function then returns true if this number matches or exceeds the requirement, or false if it doesn't.
     if (this.AchievementCondition <= days) { return true }

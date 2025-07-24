@@ -1,8 +1,12 @@
-import './AchievementHolder.css'
-import Achievement from '../../Classes/Achievements/Achievements';
+import "../App.css" //Import CSS
+import Achievement from '../Classes/Achievements';
 
 //AchievementHolder is responsible both for being the container that holds the achievements, and is where the achievments are created
 export default function AchievementHolder(props) {
+
+    //Finds the daily cost by multiplying the cost per unit with the units per week
+    //This finds the cost per week, which is divided by 7 to find the cost per day
+    var DailyCost = ((props.CostPerUnit * props.UnitsPerWeek) / 7)
 
     //List of achievements being initialised
     var StartingAchievement = new Achievement(
@@ -11,7 +15,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 0,
         AchievementType : "Other",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     var FirstDayAchievement = new Achievement(
@@ -20,7 +24,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 1,
         AchievementType : "Timer",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     var CoffeeAchievement = new Achievement(
@@ -29,7 +33,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 3.5,
         AchievementType : "Money",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     var FirstWeekAchievement = new Achievement(
@@ -38,7 +42,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 7,
         AchievementType : "Timer",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     var SecondWeekAchievement = new Achievement(
@@ -47,7 +51,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 14,
         AchievementType : "Timer",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     var AverageSpendAchievement = new Achievement(
@@ -56,7 +60,7 @@ export default function AchievementHolder(props) {
         DefaultMessage : "Default",
         AchievementCondition : 100,
         AchievementType : "Money",
-        Cost : props.CostPerUnit, Units : props.UnitsPerWeek, Last : props.LastUse }
+        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
     )
 
     //return HTML elements

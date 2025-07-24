@@ -1,5 +1,215 @@
-/*Basically empty CSS for the base app - all the fancy CSS stuff is contained in the content holders*/
-
 .AppBase {
     background-color: #316e0f;
   }
+
+/* HEADER CSS*/
+
+  .Header { /*Header class gives the qualities of the box that other header elements sit in*/
+
+    /*Creates a flexbox, with elements in it starting in the top left*/
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden; /*overflow x being hidden prevents horizontal scrolling*/
+
+    /*Positions the header to sit on the top-left corner of the app*/
+    top: 0px;
+    left: 0vx;
+    z-index: +1; /*Z-index being plus one makes it draw above other elements*/
+
+    width: auto;
+    height: auto;
+
+    border-radius: 0px;
+    margin: 0px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: #6d9756;
+  }
+
+  .icon {  /*Icon class is used to decide how to render the app icon*/
+
+     /*Height and width of the icon are equal to 10% of the width of the screen, and 5% of the height.*/
+     /*This makes the icon scale in size along with the screen - exact values were chosen by what looked best*/
+    height: calc(10vw + 5vh);
+    width: calc(10vw + 5vh);
+    
+    /*Intorudces a margin that's 5% of the height of the screen between the icon and anything on it's right side*/
+    /*As the icon will have text to the right of it, this is to reduce clutter*/
+    margin-right: 5vw;
+
+  }
+
+  /*Sets qualities of the text in the header - specifically makes it display upwards to downwards*/
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
+
+/* TIMER CSS*/
+
+/*TimerContentHolderBox sets the base for the box that holds the timer*/
+.TimerContentHolderBox {
+    display: block;     /*Displays as a box that scrolls with the screen*/
+    position: relative;
+
+    max-width: 100%;    /*Box width matches the width of the screen*/
+    overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
+
+    text-align: center; /*Aligns box contents to the centre*/
+
+    padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: #bfecdd;  /*Sets colour of the box*/
+}
+
+/*TimerContentHolderTitle is also a box, but is a different colour and holds the title of that section of the app*/
+/*This box will sit directly on top of the HolderBox*/
+.TimerContentHolderTitle{
+    display: block;
+    position: relative;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+    text-align: center;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-top: 25px;   /*margin-top sets the gap between this titles top-edge and anything above it.*/
+                        /*there's no margin-bottom as the content box needs to sit directly below it*/
+
+    background-color: #98dbbd;
+}
+
+/* MONEY CSS*/
+
+/*MoneyContentHolderBox sets the base for the box that holds the money counter*/
+.MoneyContentHolderBox {
+    display: block;     /*Displays as a box that scrolls with the screen*/
+    position: relative;
+
+    max-width: 100%;    /*Box width matches the width of the screen*/
+    overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
+
+    text-align: center; /*Aligns box contents to the centre*/
+
+    padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: #bfecea;  /*Sets colour of the box*/
+}
+
+/*MoneyContentHolderTitle is also a box, but is a different colour and holds the title of that section of the app*/
+/*This box will sit directly on top of the HolderBox*/
+.MoneyContentHolderTitle{
+    display: block;
+    position: relative;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+    text-align: center;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-top: 25px;   /*margin-top sets the gap between this titles top-edge and anything above it.*/
+                        /*there's no margin-bottom as the content box needs to sit directly below it*/
+
+    background-color: #a3d3dc;
+}
+
+/* ACHIEVEMENT CSS*/
+
+/*AchievementContentHolderBox sets the base for the box that holds the achievements*/
+.AchievementContentHolderBox {
+    display: block;     /*Displays as a box that scrolls with the screen*/
+    position: relative;
+
+    max-width: 100%;    /*Box width matches the width of the screen*/
+    overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
+
+    text-align: left;   /*Aligns content to the left*/
+
+    padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: #b2cce4;  /*Sets colour of the box*/
+}
+
+/*AchievementContentHolderTitle is also a box, but is a different colour and holds the title of that section of the app*/
+/*This box will sit directly on top of the HolderBox*/
+.AchievementContentHolderTitle{
+    display: block;
+    position: relative;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+    text-align: center; /*This aligns the title to the centre, rather than the left*/
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-top: 25px;   /*margin-top sets the gap between this titles top-edge and anything above it.*/
+                        /*there's no margin-bottom as the content box needs to sit directly below it*/
+
+    background-color: #8ab2d7;
+}
+
+/*Achievements are stored in an unordered list - this makes the bullet-point next to them a circle*/
+.List {
+    list-style-type: circle;
+}
+
+/* SCOREBOARD CSS*/
+
+/*ScoreboardContentHolderBox sets the base for the box that holds the achievements*/
+.ScoreboardContentHolderBox {
+    display: block;     /*Displays as a box that scrolls with the screen*/
+    position: relative;
+
+    max-width: 100%;    /*Box width matches the width of the screen*/
+    overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
+
+    text-align: left;   /*Aligns content to the left*/
+
+    padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: #a7baef;  /*Sets colour of the box*/
+}
+
+/*ScoreboardContentHolderTitle is also a box, but is a different colour and holds the title of that section of the app*/
+/*This box will sit directly on top of the HolderBox*/
+.ScoreboardContentHolderTitle{
+    display: block;
+    position: relative;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+    text-align: center; /*This aligns the title to the centre, rather than the left*/
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-top: 25px;   /*margin-top sets the gap between this titles top-edge and anything above it.*/
+                        /*there's no margin-bottom as the content box needs to sit directly below it*/
+
+    background-color: #7896d2;
+}
