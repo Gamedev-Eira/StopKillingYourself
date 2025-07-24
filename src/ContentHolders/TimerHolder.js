@@ -1,6 +1,5 @@
-import '../../App.css' //Imports CSS
-import '../../Classes/Timer/Timer'
-import TobaccoTimer from '../../Classes/Timer/Timer';
+import '../App.css' //Imports CSS
+import TobaccoTimer from '../Classes/Timer';
 
 export default function TimerHolder(props) {
     

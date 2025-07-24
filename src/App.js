@@ -4,10 +4,10 @@ import React, { useState } from "react"; //Uses React States - states are used f
 
 //Imports the 4 "container" compondents - these are self-contained elements of the app that displays (or gathers) certain information
 import AppHeader from './Header/Header';
-import TimerHolder from './ContentHolders/TimerHolder/TimerHolder';
-import MoneyHolder from './ContentHolders/MoneyHolder/MoneyHolder';
-import AchievementHolder from './ContentHolders/AchievementHolder/AchievementHolder';
-import ScoreboardHolder from "./ContentHolders/ScoreboardHolder/ScoreboardHolder";
+import TimerHolder from './ContentHolders/TimerHolder';
+import MoneyHolder from './ContentHolders/MoneyHolder';
+import AchievementHolder from './ContentHolders/AchievementHolder';
+import ScoreboardHolder from "./ContentHolders/ScoreboardHolder";
 
 //Default App function that is called
 export default function App() {

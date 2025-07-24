@@ -1,5 +1,5 @@
-import '../../App.css' //Imports CSS
-import Achievement from '../../Classes/Achievements/Achievements';
+import "../App.css" //Import CSS
+import Achievement from '../Classes/Achievements';
 
 //AchievementHolder is responsible both for being the container that holds the achievements, and is where the achievments are created
 export default function AchievementHolder(props) {

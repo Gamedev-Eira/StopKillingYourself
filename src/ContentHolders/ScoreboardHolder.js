@@ -1,4 +1,5 @@
-import '../../App.css' //Imports CSS
+import '../App.css' //Imports CSS
+import '../Classes/Scoreboard'
 
 export default function ScoreboardHolder(props) {
 
@@ -20,7 +21,7 @@ export default function ScoreboardHolder(props) {
             {/*This div holds the achievement text itself*/}
             <div className='ScoreboardContentHolderBox'>
 
-                PeePeePooPoo 
+                PeePeePooPoo
 
             </div>
 

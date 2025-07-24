@@ -1,5 +1,5 @@
-import '../../App.css' //Imports CSS
-import MoneyTracker from '../../Classes/Money/Money'
+import '../App.css' //Imports CSS
+import MoneyTracker from '../Classes/Money'
 
 //Default MoneyHolder function - recieves it's arguments via props
 export default function MoneyHolder(props) {
