@@ -42,18 +42,26 @@ class Achievement extends BaseClass {
 
     this.interval = setInterval(() => { //Interval runs repeatedly
 
-        //If statements first check if this achievement hasn't been achieved.
-        //If they haven't, the achievement condition is calculated in the same way as in the constructor
+        //achievement condition is calculated in the same way as in the constructor
 
-        if(this.state.Achieved === false && this.AchievementType === "Money") {
+        if(this.AchievementType === "Money") {
             this.setState({Achieved : this.CalculateMoneyCondition() } );
             
-        } if(this.state.Achieved === false && this.AchievementType === "Timer") {
+        } if(this.AchievementType === "Timer") {
             this.setState({Achieved : this.CalculateTimerCondtion() } );
         }
 
     }, 300); //Sets the frequency of how often this function runs to once every 300 milliseconds
 
+  }
+
+  render () {
+
+    return(
+
+      <li><b>{this.ReturnTitle()}</b> | {this.ReturnTagline()}</li>
+      
+    );
   }
 
   //ReturnTitle and Return Tagline return the data the Achievement Manager will need to display
