@@ -9,59 +9,54 @@ export default function AchievementHolder(props) {
     var DailyCost = ((props.CostPerUnit * props.UnitsPerWeek) / 7)
 
     //List of achievements being initialised
-    var StartingAchievement = new Achievement(
-        {Title : "Use this app for the first time",
-        Tagline : "You started your quitting journey!",
-        DefaultMessage : "Default",
-        AchievementCondition : 0,
-        AchievementType : "Other",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
+    const AchievementList = [
+    { Title: "Use this app for the first time",
+    Tagline: "You started your quitting journey!",
+    DefaultMessage: "Default",
+    AchievementCondition: 0,
+    AchievementType: "Other",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse },
+    
+    { Title: "Go 24hrs without tobacco",
+    Tagline: "Only gets easier from here!",
+    DefaultMessage: "Default",
+    AchievementCondition: 1,
+    AchievementType: "Timer",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse },
 
-    var FirstDayAchievement = new Achievement(
-        {Title : "Go 24hrs without tobacco",
-        Tagline : "Only gets easier from here!",
-        DefaultMessage : "Default",
-        AchievementCondition : 1,
-        AchievementType : "Timer",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
+    { Title: "Save £3.50",
+    Tagline: "You saved enough for a coffee - go treat yourself!",
+    DefaultMessage: "Default",
+    AchievementCondition: 3.5,
+    AchievementType: "Money",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse },
+    
+    { Title: "Go 1 week without tobacco",
+    Tagline: "Halfway through the test period!",
+    DefaultMessage: "Default",
+    AchievementCondition: 7,
+    AchievementType: "Timer",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse },
+    
+    { Title: "Go 2 weeks without tobacco",
+    Tagline: "Thank you for helping me test - you've done great!",
+    DefaultMessage: "Default",
+    AchievementCondition: 14,
+    AchievementType: "Timer",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse },
 
-    var CoffeeAchievement = new Achievement(
-        {Title : "Save £3.50",
-        Tagline : "You saved enough for a coffee - go treat yourself!",
-        DefaultMessage : "Default",
-        AchievementCondition : 3.5,
-        AchievementType : "Money",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
-
-    var FirstWeekAchievement = new Achievement(
-        {Title : "Go 1 week without tobacco",
-        Tagline : "Halfway through the test period!",
-        DefaultMessage : "Default",
-        AchievementCondition : 7,
-        AchievementType : "Timer",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
-
-    var SecondWeekAchievement = new Achievement(
-        {Title : "Go 2 weeks without tobacco",
-        Tagline : "Thank you for helping me test - you've done great!",
-        DefaultMessage : "Default",
-        AchievementCondition : 14,
-        AchievementType : "Timer",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
-
-    var AverageSpendAchievement = new Achievement(
-        {Title : "Save £100",
-        Tagline : "Think of all the things you can buy!",
-        DefaultMessage : "Default",
-        AchievementCondition : 100,
-        AchievementType : "Money",
-        CostPerDay : DailyCost, TimeOfLastUse : props.LastUse }
-    )
+    { Title: "Save £100",
+    Tagline: "Think of all the things you can buy!",
+    DefaultMessage: "Default",
+    AchievementCondition: 100,
+    AchievementType: "Money",
+    CostPerDay: DailyCost,
+    TimeOfLastUse: props.LastUse } ];
 
     //return HTML elements
     return (
@@ -78,19 +73,14 @@ export default function AchievementHolder(props) {
             </div>
             
             {/*This div holds the achievement text itself*/}
-            <div className='AchievementContentHolderBox'> <ul class="List">
+            <div className='AchievementContentHolderBox'> <ul className="List">
 
-                <h3> {/*Achievements are displayed as h3s - displayed by calling ReturnTitle and ReturnTagline for each achievement*/}
-                <li><b>{StartingAchievement.ReturnTitle()}</b> | {StartingAchievement.ReturnTagline()}</li>
-                <li><b>{FirstDayAchievement.ReturnTitle()}</b> | {FirstDayAchievement.ReturnTagline()}</li>
-                <li><b>{CoffeeAchievement.ReturnTitle()}</b> | {CoffeeAchievement.ReturnTagline()}</li>
-                <li><b>{FirstWeekAchievement.ReturnTitle()}</b> | {FirstWeekAchievement.ReturnTagline()}</li>
-                <li><b>{AverageSpendAchievement.ReturnTitle()}</b> | {AverageSpendAchievement.ReturnTagline()}</li>
-                <li><b>{SecondWeekAchievement.ReturnTitle()}</b> | {SecondWeekAchievement.ReturnTagline()}</li>
+                <h3> {/*Achievements are displayed as h3s - this loop is wrapped in an unordered list, with each output being a list entry
+                Loop goes through each achievement and calls them, which allows them to render*/}
+                    {AchievementList.map((CurrentAchievement, index) => ( <Achievement key={index} {...CurrentAchievement} />) ) }
                 </h3>
-                </ul> {/*Achievements also are stored in an unordered list because I thought it looked better*/}
-
-            </div>
+                
+            </ul></div>
 
         </div>
         

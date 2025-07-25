@@ -184,7 +184,7 @@
     max-width: 100%;    /*Box width matches the width of the screen*/
     overflow-x: hidden; /*Overflow-x being hidden prevents horizontal scrolling*/
 
-    text-align: left;   /*Aligns content to the left*/
+    text-align: left;   /*Aligns content to the center*/
 
     padding-left: 25px; /*Sets padding around the inside of the box, so contents don't sit directly on the edge*/
     padding-right: 25px;

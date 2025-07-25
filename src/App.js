@@ -1,6 +1,6 @@
 //Main app file - calls all other components and holds key values
-
 import React, { useState } from "react"; //Uses React States - states are used for components that need to be re-rendered, as state updates trigger re-renders
+import Cookies from "js-cookie";
 
 //Imports the 4 "container" compondents - these are self-contained elements of the app that displays (or gathers) certain information
 import AppHeader from './Header/Header';
