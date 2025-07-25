@@ -54,7 +54,7 @@ class Scoreboard extends BaseClass {
     ShowTime () {
         const { days, hours, minutes } = this.state.TimeSince;
 
-        var ConjounedString = days + " Day(s), " + hours + " Hour(s) ," + minutes + " Minute(s)";
+        var ConjounedString = days + " Day(s), " + hours + " Hour(s), " + minutes + " Minute(s)";
         return ( ConjounedString );
     }
 
